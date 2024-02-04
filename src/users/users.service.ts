@@ -44,7 +44,8 @@ export class UsersService {
     });
 
     if(!user){
-      throw new HttpException('account doesn\'t exists', HttpStatus.UNPROCESSABLE_ENTITY);
+      throw new HttpException('unauthorized', 
+HttpStatus.UNAUTHORIZED);
     }
 
     if(!await bcrypt.compare(loginDto.password, user.password)){
