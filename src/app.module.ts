@@ -20,7 +20,7 @@ dotenv.config();
       entities: [
         User
       ],
-      synchronize: true
+      synchronize: process.env.SYNCHRONIZE == 'true' ? true : false
     }),
     UsersModule
   ],
