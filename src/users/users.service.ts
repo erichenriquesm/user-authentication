@@ -44,8 +44,7 @@ export class UsersService {
     });
 
     if(!user){
-      throw new HttpException('unauthorized', 
-HttpStatus.UNAUTHORIZED);
+      throw new HttpException('unauthorized', HttpStatus.UNAUTHORIZED);
     }
 
     if(!await bcrypt.compare(loginDto.password, user.password)){
